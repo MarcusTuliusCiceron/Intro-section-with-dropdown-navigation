@@ -1,69 +1,47 @@
-const btnProduct = document.querySelector('.btn_header_product')
-const listProduct = document.querySelector('.list_header_product')
-const btnCompany = document.querySelector('.btn_header_company')
-const listCompany = document.querySelector('.list_header_company')
-const btnConnect = document.querySelector('.btn_header_connect')
-const listConnect = document.querySelector('.list_header_connect')
-const hamburgerBtn = document.querySelector('.HamburgerBtn')
-const hamburgerMenu = document.querySelector('.HamburgerMenu')
+const featuresMenu = document.querySelector('.Features_menu')
+const featuresBtn = document.querySelector('.Features_link')
+const companyMenu = document.querySelector('.Company_menu')
+const companyBtn = document.querySelector('.Company_link')
 
-function openMenu(list, btn){
-    closeMenu()
-    console.log('open')
-    list.classList.add('open')
-    btn.classList.add('open')
-}
+const hamburgerBtn = document.querySelector('.hamburger_btn')
+const hamburgerMenu = document.querySelector('.hamburger_menu_overlay')
 
-function closeMenu(){
-    listCompany.classList.remove('open')
-    listConnect.classList.remove('open')
-    listProduct.classList.remove('open')
-    btnCompany.classList.remove('open')
-    btnConnect.classList.remove('open')
-    btnProduct.classList.remove('open')
-}
+let featuresOpen = false
+let companyOpen = false
+let hamburgerOpen = false
 
-document.body.addEventListener('click', (e)=>{
-    if ( e.explicitOriginalTarget == btnProduct){
-        if (listProduct.classList.contains('open')){
-            closeMenu()
-        }
-        else{
-            openMenu(listProduct, btnProduct)
-            listConnect.classList.remove('open')
-            listCompany.classList.remove('open')
-        }
-        
-    }
-    else if ( e.explicitOriginalTarget == btnCompany){
-        if (listCompany.classList.contains('open')){
-            closeMenu()
-        }
-        else{
-            openMenu(listCompany, btnCompany)
-            listConnect.classList.remove('open')
-            listProduct.classList.remove('open')
-        }
-        
-    }
-    else if ( e.explicitOriginalTarget == btnConnect){
-        if (listConnect.classList.contains('open')){
-            closeMenu()
-        }
-        else{
-            openMenu(listConnect, btnConnect)
-            listProduct.classList.remove('open')
-            listCompany.classList.remove('open')
-        }
+featuresBtn.addEventListener("click", ()=>{
+    console.log("click feature")
+    if (featuresOpen){
+        featuresMenu.classList = "header_dropdown_menu Features_menu fadeout"
     }
     else{
-        closeMenu()
+        featuresMenu.classList = "header_dropdown_menu Features_menu fadein"
     }
+    featuresOpen = !featuresOpen
+})
 
-    console.log(e.explicitOriginalTarget)
-}) 
+companyBtn.addEventListener("click", ()=>{
+    console.log("click company")
+    if (companyOpen){
+        companyMenu.classList = "header_dropdown_menu Company_menu fadeout"
+    }
+    else{
+        companyMenu.classList = "header_dropdown_menu Company_menu fadein"
+    }
+    companyOpen = !companyOpen
+})
 
 hamburgerBtn.addEventListener("click", ()=>{
-    hamburgerBtn.classList.toggle('open')
-    hamburgerMenu.classList.toggle('open')
+    console.log("click")
+    if (hamburgerOpen){
+        hamburgerBtn.classList = "hamburger_btn toggleout"
+        hamburgerMenu.classList = "hamburger_menu_overlay fadeout"
+    }
+    else
+    {
+        hamburgerBtn.classList = "hamburger_btn togglein"
+        hamburgerMenu.classList = "hamburger_menu_overlay fadein"
+    }
+    hamburgerOpen = !hamburgerOpen
 })

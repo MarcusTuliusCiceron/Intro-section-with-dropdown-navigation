@@ -1,0 +1,82 @@
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        visibility: visible;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    99%{
+        opacity: 0;
+        visibility: visible;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes togglein{
+    0%{
+        opacity: 1;
+        background-image: url(../../images/icon-menu.svg);
+    }
+    50%{
+        opacity: 0;
+        background-image: url(../../images/icon-menu.svg);
+    }
+    51%{
+        opacity: 0;
+        background-image: url(../../images/icon-close-menu.svg);
+    }
+    100%{
+        opacity: 1;
+        background-image: url(../../images/icon-close-menu.svg);
+    }
+}
+
+@keyframes toggleout{
+    0%{
+        
+        opacity: 1;
+        background-image: url(../../images/icon-close-menu.svg);
+    }
+    50%{
+        opacity: 0;
+        background-image: url(../../images/icon-close-menu.svg);
+    }
+    51%{
+        opacity: 0;
+        background-image: url(../../images/icon-menu.svg);
+    }
+    100%{
+        opacity: 1;
+        background-image: url(../../images/icon-menu.svg);
+    }
+}
+
+
+.fadein{
+    animation: fadein 300ms linear forwards;
+}
+
+.fadeout{
+    animation: fadeout 300ms linear forwards;
+}
+
+.togglein{
+    animation: togglein 400ms linear forwards;
+}
+
+.toggleout{
+    animation: toggleout 400ms linear forwards;
+}
+
