@@ -18,8 +18,8 @@ body{
     background-color: $AlmostWhite;
     position: relative;
     max-width: 100vw;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
+    
     @include breakpoint-down(medium){
         padding: 0;
     }
@@ -452,6 +452,11 @@ body{
 }
 
 .mobile_header.hideForDesktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+.hideForDesktop{
     @include breakpoint-up(large){
         display: none;
     }
