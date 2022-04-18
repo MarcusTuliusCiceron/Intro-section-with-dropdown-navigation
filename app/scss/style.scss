@@ -40,19 +40,54 @@ body{
             height: 100%;
             width: 62%;
             background-color: white;
-            padding: 100px 30px;
+            padding: 85px 17px;
             details{
-                -webkit-appearance: none;
-                -moz-appearance: none;
+                margin-bottom: 35px;
+                display: flex;
+                flex-direction: column;
+                summary{
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    color: $MediumGray;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    
+                }
+                summary::-webkit-details-marker{
+                    display: none;
+                }
+                .company_link{
+                    color: $MediumGray;
+                    text-decoration: none;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    &:nth-child(2){
+                        margin-top: 30px;
+                    }
+                }
+                
+            }
+            details[open] summary{
+                
+                img{
+                    transform: rotate(180deg);
+                }
             }
             .dropdownList_link{
                 display: flex;
+                margin-left: 20px;
+                margin-top: 20px;
+
                 
                 .dropdownList_icon{
-                    width: 17px;
-                    height: 17px;
+                    width: 20px;
+                    height: 20px;
                     background-repeat: no-repeat;
                     background-position: center;
+                    background-size: contain;
                     margin-right: 17px;
                 }
                 a{
@@ -65,6 +100,7 @@ body{
                 }
             }
             .dropdownList_link:nth-child(2){
+                margin-top: 30px;
                 .dropdownList_icon{
                     background-image: url(../../images/icon-todo.svg);
                 }
